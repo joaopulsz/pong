@@ -9,9 +9,16 @@ class Ball(Turtle):
         self.penup()
         self.shapesize(stretch_len=1, stretch_wid=1)
         self.setheading(45)
+        self.move_speed = 12
 
     def move(self):
-        self.forward(12)
+        self.forward(self.move_speed)
+
+    def increase_speed(self):
+        self.move_speed += 2
+
+    def reset_speed(self):
+        self.move_speed = 12
 
     def bounce_down(self):
         self.setheading(360 - self.heading())

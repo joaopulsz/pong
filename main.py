@@ -35,14 +35,18 @@ while playing:
         ball.bounce_up()
     elif ball.distance(left_paddle) < 50 and ball.xcor() < -340:
         ball.bounce_right()
+        ball.increase_speed()
     elif ball.distance(right_paddle) < 50 and ball.xcor() > 340:
         ball.bounce_left()
+        ball.increase_speed()
     elif ball.xcor() > 400:
         scoreboard.left_scores()
         ball.reset_left()
+        ball.reset_speed()
     elif ball.xcor() < -400:
         scoreboard.right_scores()
         ball.reset_right()
+        ball.reset_speed()
 
 
 
