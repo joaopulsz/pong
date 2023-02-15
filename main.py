@@ -27,10 +27,15 @@ while playing:
 
     ball.move()
 
-    if ball.ycor() > 390:
+    if ball.ycor() > 380:
         ball.bounce_down()
-    elif ball.ycor() < -390:
+    elif ball.ycor() < -380:
         ball.bounce_up()
+    elif ball.distance(left_paddle) < 50 and ball.xcor() < -340:
+        ball.bounce_right()
+    elif ball.distance(right_paddle) < 50 and ball.xcor() > 340:
+        ball.bounce_left()
+
 
 
 screen.exitonclick()
