@@ -24,3 +24,11 @@ class Ball(Turtle):
 
     def bounce_right(self):
         self.setheading(180 - self.heading())
+
+    def reset_left(self):
+        self.goto(0, 0)
+        self.setheading(130)
+
+    def reset_right(self):
+        self.goto(0, 0)
+        self.setheading(45)

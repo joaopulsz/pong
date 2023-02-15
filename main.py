@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 screen = Screen()
@@ -12,6 +13,7 @@ screen.tracer(0)
 left_paddle = Paddle(-360)
 right_paddle = Paddle(360)
 ball = Ball()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(right_paddle.up, "Up")
@@ -35,6 +37,12 @@ while playing:
         ball.bounce_right()
     elif ball.distance(right_paddle) < 50 and ball.xcor() > 340:
         ball.bounce_left()
+    elif ball.xcor() > 400:
+        scoreboard.left_scores()
+        ball.reset_left()
+    elif ball.xcor() < -400:
+        scoreboard.right_scores()
+        ball.reset_right()
 
 
 
